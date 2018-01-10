@@ -1,0 +1,128 @@
+@import "variables.less";
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0px;
+        padding-top: 50px;
+    }
+    .sidebar {
+        z-index: 900;
+        position: fixed;
+        width: 100%;
+        top: 60px;
+        height: auto;
+        overflow: visible;
+        transition: 0.05s ease-in;
+        &:hover {
+            width:100%;
+        }
+        .hide-menu {
+            display: inline;
+        }
+        &:hover .nav-third-level li a, &:hover .nav-second-level li a {
+                padding-left: 20px;
+        }
+    }
+    .navbar-static-top {
+        padding-left: 0px;
+    }
+    .sidebar-head {
+        display: none;
+    }
+    
+    /*make it horizontal*/
+    #side-menu {
+        padding-top: 0px;
+        overflow: visible;
+        position: relative;
+        >li{
+            float:left;
+            vertical-align: top;
+            position: relative;
+            > a{
+                padding: 10px 18px;
+                width: auto;
+                .arrow{
+                    display: none;
+                }
+            }
+            &.mega-nav{
+                position: initial;
+                ul.nav-second-level {
+                    left:0px;
+                    right:0px;
+                    >li{
+                        width: 25%;
+                        height: 50px;
+                        float: left;
+                    }
+                }    
+            }
+            ul > li > a.active, ul > li > a:hover{
+                color:@themecolor;
+            }
+        }
+        .user-pro, .label{
+            display: none;
+        }
+        .last-nav {
+            .nav-second-level{
+                right:0px;
+            }
+            .nav-third-level{
+                left:-240px;
+                box-shadow: -10px 20px 30px rgba(0, 0, 0, 0.05);
+            }
+        }
+        .nav-second-level{
+            position: absolute;
+            display: none;
+            padding-left: 0px;
+            background: @white;
+            height:auto!important;
+            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.05);
+            &.two-li{
+                width: 440px;
+                > li{
+                    width: 50%;
+                    float: left;
+                    height: 50px;
+                }
+            }
+            
+            > li{
+                position: relative;
+                background: @white;
+                >a {
+                    width: 220px;
+                }
+            }
+        }
+        >li:hover {
+            background: rgba(0, 0, 0, 0.1);
+            .nav-second-level{
+                    display: block;
+            }
+        }
+        .nav-third-level{
+            display: none;
+            position: absolute;
+            left:220px; 
+            height:auto!important;
+            background: @extralight;
+            z-index: 10;
+            top:0px;
+            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.05);
+            li{
+                background: @extralight;
+            }
+        }
+        .nav-second-level li:hover{ 
+            > a{color:@themecolor;}
+            .nav-third-level{
+                display: block;
+            } 
+        }    
+    }    
+    
+}
